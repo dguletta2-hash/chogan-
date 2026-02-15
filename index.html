@@ -15,7 +15,8 @@
             z-index: 9999;
             transition: opacity 1s ease-out;
         }
-        #splash img { width: 150px; animation: pulse 2s infinite; filter: invert(1); }
+        #splash img { width: 150px; animation: pulse 2s infinite; }
+        
         @keyframes pulse {
             0% { transform: scale(1); opacity: 0.8; }
             50% { transform: scale(1.05); opacity: 1; }
@@ -31,13 +32,19 @@
         .card { 
             background: white; width: 100%; max-width: 400px; border-radius: 30px; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.1); text-align: center; padding: 40px 20px;
-            border: 1px solid #e0c080; opacity: 1; transition: opacity 1.5s ease-in;
+            border: 1px solid #e0c080; 
+            opacity: 0; /* Изначально скрыта для анимации появления */
+            transition: opacity 1.5s ease-in;
         }
+        
+        /* ИСПРАВЛЕНО: добавлена точка и маленькая буква */
         .profile-img { 
             width: 150px; height: 150px; border-radius: 50%; 
             border: 3px solid #d4af37; object-fit: cover; margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+            display: inline-block;
         }
+        
         h1 { font-size: 28px; color: #1a1a1a; margin: 0; letter-spacing: 1px; }
         .subtitle { color: #888; font-size: 16px; margin-bottom: 30px; font-style: italic; }
         
@@ -114,10 +121,11 @@
         setTimeout(function() {
             const splash = document.getElementById('splash');
             const card = document.getElementById('mainCard');
-            splash.style.opacity = '0';
+            if (splash) splash.style.opacity = '0';
+            
             setTimeout(() => {
-                splash.style.display = 'none';
-                card.style.opacity = '1';
+                if (splash) splash.style.display = 'none';
+                if (card) card.style.opacity = '1';
             }, 1000);
         }, 1500);
     };
