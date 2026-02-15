@@ -15,7 +15,7 @@
             z-index: 9999;
             transition: opacity 1s ease-out;
         }
-        #splash img { width: 150px; animation: pulse 2s infinite; }
+        #splash img { width: 150px; animation: pulse 2s infinite; border-radius: 10px; }
         
         @keyframes pulse {
             0% { transform: scale(1); opacity: 0.8; }
@@ -33,13 +33,12 @@
             background: white; width: 100%; max-width: 400px; border-radius: 30px; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.1); text-align: center; padding: 40px 20px;
             border: 1px solid #e0c080; 
-            opacity: 0; /* Изначально скрыта для анимации появления */
+            opacity: 0; 
             transition: opacity 1.5s ease-in;
         }
         
-        /* ИСПРАВЛЕНО: добавлена точка и маленькая буква */
         .profile-img { 
-            width: 150px; height: 150px; border-radius: 50%; 
+            width: 180px; height: 180px; border-radius: 50%; 
             border: 3px solid #d4af37; object-fit: cover; margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
             display: inline-block;
@@ -53,7 +52,6 @@
             margin: 25px 0 15px; letter-spacing: 2px; border-bottom: 1px solid #eee; padding-bottom: 5px;
         }
         
-        /* Кнопки */
         .btn { 
             display: flex; align-items: center; justify-content: center; text-decoration: none; 
             padding: 12px; margin: 5px 0; border-radius: 10px; font-weight: 600; 
@@ -75,11 +73,11 @@
 <body>
 
 <div id="splash">
-    <img src="logo.jpg" alt="Chogan Logo">
+    <img src="IMG-20260214-WA0032.jpg" alt="Chogan Logo">
 </div>
 
 <div class="card" id="mainCard">
-    <img src="photo.jpg" alt="Julietta" class="profile-img">
+    <img src="IMG_3699.JPG" alt="Julietta" class="profile-img">
     <h1>Julietta</h1>
     <p class="subtitle">Ihre Chogan Expertin</p>
 
